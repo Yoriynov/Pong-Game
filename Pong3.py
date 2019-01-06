@@ -1,9 +1,6 @@
-# Le célèbre jeu "Pong" codé par mes soins (enfin, j'ai essayé)
 from tkinter import *
 class Raquette(object):
     """Créer un rectangle (la raquette) et inclus la méthode de déplacement
-    Il faut donner un parametre si on veut jouer à deux. Par défaut, le
-    jeu se fait contre un mur.
     """
     def __init__(self, boss, x, y):
         self.boss = boss    # la ref de la fenêtre
@@ -16,12 +13,12 @@ class Raquette(object):
                                       dash=(20, 10))
     def monter(self, depl):
         self.y -=10
-        if self.y <=0:    # on contrôle que l'on ne sort pas du tableau
+        if self.y <=0:    # on contrôle que l'ont ne sort pas du tableau
             self.y =0
         self.boss.coords(self.raq, self.x, self.y, self.x+10, self.y+60)
     def descendre(self, depl):
         self.y +=10
-        if self.y >=420:    # on contrôle que l'on ne sort pas du tableau
+        if self.y >=420:    # on contrôle que l'ont ne sort pas du tableau
             self.y =420
         self.boss.coords(self.raq, self.x, self.y, self.x+10, self.y+60)
 class Balle(object):
